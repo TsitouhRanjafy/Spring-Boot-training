@@ -59,7 +59,7 @@ class FamilyCardApplicationTests {
     @Test
     @DirtiesContext // comme ça, ce test serait independent, l'ajout n'aurait aucun effet pour les tests suivent
     void shouldCreateANewCashCard(){
-        CashCard newCashCard = new CashCard(null, 250.0, "sarah1");
+        CashCard newCashCard = new CashCard(null, 250.0, null);
         ResponseEntity<Void> createResponse = restTemplate
                 .withBasicAuth("sarah1", "abc123")
                 .postForEntity("/cashcards", newCashCard, Void.class);
